@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 de Março – Dia Internacional da Mulher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B46C1;
+            --primary-dark: #553C9A;
+            --secondary: #1E3A8A;
+            --accent: #EC4899;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+            --bg-card: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-1);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: calc(50% - 40px);
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: auto;
+            padding-left: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-right: 40px;
+            text-align: right;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 0;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-year {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .timeline-title:hover {
+            color: var(--primary);
+        }
+
+        .timeline-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .timeline-content.expanded {
+            max-height: 500px;
+            margin-top: 1rem;
+        }
+
+        /* Quiz */
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-question {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .quiz-option {
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-light);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .quiz-option:hover {
+            background: #E5E7EB;
+            border-color: var(--primary);
+        }
+
+        .quiz-option.correct {
+            background: #D1FAE5;
+            border-color: #10B981;
+            color: #065F46;
+        }
+
+        .quiz-option.incorrect {
+            background: #FEE2E2;
+            border-color: #EF4444;
+            color: #991B1B;
+        }
+
+        .quiz-feedback {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .quiz-feedback.show {
+            opacity: 1;
+        }
+
+        .quiz-next {
+            margin-top: 1.5rem;
+            padding: 0.875rem 2rem;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-next:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(107, 70, 193, 0.4);
+        }
+
+        .quiz-score {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-top: 2rem;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .card-text {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Pressures */
+        .pressures-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pressure-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .pressure-header {
+            padding: 1.5rem 2rem;
+            background: var(--bg-light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .pressure-header:hover {
+            background: #E5E7EB;
+        }
+
+        .pressure-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .pressure-item.active .pressure-icon {
+            transform: rotate(180deg);
+        }
+
+        .pressure-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 2rem;
+        }
+
+        .pressure-item.active .pressure-content {
+            max-height: 500px;
+            padding: 1.5rem 2rem;
+        }
+
+        .pressure-explanation {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Form */
+        .participate-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(107, 70, 193, 0.3);
+        }
+
+        .form-success {
+            display: none;
+            background: #D1FAE5;
+            color: #065F46;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .footer-credits {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline-item .timeline-dot {
+                left: 10px !important;
+                right: auto !important;
+            }
+
+            .quiz-container,
+            .participate-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">8 de Março – Dia Internacional da Mulher</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#quiz">Mitos & Verdades</a></li>
+                    <li><a href="#relacionamentos">Relacionamentos Saudáveis</a></li>
+                    <li><a href="#pressoes">Pressões Sociais</a></li>
+                    <li><a href="#participe">Participe</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Dia Internacional<br>da Mulher</h1>
+            <div class="hero-subtitle">Uma data de luta, resistência e conquistas</div>
+            <div class="hero-text">
+                O Dia Internacional da Mulher, celebrado em 8 de março, tem origem nas manifestações de trabalhadoras por melhores condições de trabalho e direitos iguais no início do século XX. Mais do que uma celebração, é um dia de reflexão sobre as conquistas alcançadas e os desafios que ainda precisam ser superados na busca pela igualdade de gênero.<br><br>
+                
+                Hoje, a data permanece crucial para conscientizar jovens sobre a importância do respeito, da igualdade e do combate a todas as formas de discriminação e violência contra a mulher. É fundamental que cada nova geração compreenda essa história e se comprometa com a construção de uma sociedade mais justa e igualitária.
+            </div>
+            <a href="#historia" class="cta-button">Explorar conteúdo</a>
+        </div>
+    </section>
+
+    <section id="historia">
+        <h2 class="section-title">História</h2>
+        <p class="section-subtitle">Linha do tempo das conquistas femininas</p>
+        
+        <div class="timeline">
+            <div class="timeline-item" data-year="1908">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1908</div>
+                <div class="timeline-title">Manifestações por Melhores Condições</div>
+                <div class="timeline-content">
+                    Em 8 de março de 1908, cerca de 15 mil mulheres marcharam pelas ruas de Nova York exigindo redução da jornada de trabalho, melhores salários e direito ao voto. Este foi um dos marcos que deu origem à data. As trabalhadoras enfrentavam jornadas de até 16 horas diárias em condições insalubres, recebendo salários muito inferiores aos dos homens.
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-year="1932">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1932</div>
+                <div class="timeline-title">Direito ao Voto Feminino no Brasil</div>
+                <div class="timeline-content">
+                    O Brasil tornou-se o quarto país da América Latina a garantir o direito ao voto feminino através do Código Eleitoral de 1932. Esta conquista foi resultado de décadas de luta do movimento sufragista brasileiro, liderado por mulheres como Bertha Lutz. Inicialmente, o voto era restrito a mulheres casadas com autorização do marido ou viúvas e solteiras com renda própria. O voto feminino sem restrições só foi garantido em 1946.
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-year="1962">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">1962</div>
+                <div class="timeline-title">Estatuto da Mulher Casada</div>
+                <div class="timeline-content">
+                    A Lei nº 4.121/1962, conhecida como Estatuto da Mulher Casada, foi um marco na conquista de direitos civis para as mulheres brasileiras. Antes dela, mulheres casadas eram consideradas "relativamente incapazes" e precisavam de autorização do marido para trabalhar, viajar ou abrir conta bancária. O Estatuto garantiu à mulher casada o direito de trabalhar sem autorização do cônjuge, receber herança e ter a guarda dos filhos em caso de separação.
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-year="2006">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2006</div>
+                <div class="timeline-title">Lei Maria da Penha</div>
+                <div class="timeline-content">
+                    A Lei 11.340/2006, conhecida como Lei Maria da Penha, representa um dos mais importantes avanços na proteção dos direitos das mulheres no Brasil. Nomeada em homenagem à biofarmacêutica Maria da Penha Maia, que lutou por justiça após sofrer duas tentativas de feminicídio pelo marido, a lei criou mecanismos para coibir e prevenir a violência doméstica e familiar contra a mulher. A legislação estabeleceu medidas de assistência e proteção às mulheres em situação de violência doméstica e familiar.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz">
+        <h2 class="section-title">Mitos & Verdades</h2>
+        <p class="section-subtitle">Teste seus conhecimentos sobre igualdade de gênero</p>
+        
+        <div class="quiz-container">
+            <div id="quiz-content">
+                <div class="quiz-question" id="question"></div>
+                <div class="quiz-options" id="options"></div>
+                <div class="quiz-feedback" id="feedback"></div>
+                <button class="quiz-next" id="next-btn" style="display: none;">Próxima pergunta</button>
+            </div>
+            <div id="quiz-result" style="display: none;">
+                <h3>Quiz Completo!</h3>
+                <div class="quiz-score" id="score"></div>
+                <button class="quiz-next" id="restart-btn">Recomeçar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="relacionamentos">
+        <h2 class="section-title">Relacionamentos Saudáveis</h2>
+        <p class="section-subtitle">Princípios fundamentais de relações equilibradas e respeitosas</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3 class="card-title">Respeito</h3>
+                <p class="card-text">O respeito mútuo é a base de qualquer relacionamento saudável. Significa valorizar a opinião, os sentimentos e os limites do outro, mesmo em momentos de discordância. Inclui respeitar escolhas pessoais, privacidade e individualidade.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <h3 class="card-title">Comunicação</h3>
+                <p class="card-text">Diálogo aberto e honesto é essencial. Em um relacionamento saudável, ambas as partes se sentem à vontade para expressar sentimentos, necessidades e preocupações sem medo de julgamento ou retaliação. A escuta ativa é tão importante quanto falar.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3 class="card-title">Limites</h3>
+                <p class="card-text">Estabelecer e respeitar limites pessoais é fundamental. Cada pessoa tem o direito de definir o que é aceitável ou não em um relacionamento. Limites saudáveis protegem o bem-estar emocional e físico de ambas as partes.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3 class="card-title">Autonomia</h3>
+                <p class="card-text">Cada indivíduo mantém sua identidade e independência. Relacionamentos saudáveis não exigem que você abandone seus interesses, amigos ou objetivos pessoais. Apoiar o crescimento individual do outro fortalece a relação.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <h3 class="card-title">Confiança</h3>
+                <p class="card-text">A confiança é construída através da consistência, honestidade e confiabilidade. Em um relacionamento saudável, não há necessidade de controle excessivo, ciúmes tóxicos ou vigilância constante. A confiança permite que ambos se sintam seguros e valorizados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pressoes">
+        <h2 class="section-title">Pressões Sociais</h2>
+        <p class="section-subtitle">Reconhecendo padrões prejudiciais de controle e manipulação</p>
+        
+        <div class="pressures-list">
+            <div class="pressure-item">
+                <div class="pressure-header">
+                    <span>"Você é muito sensível."</span>
+                    <span class="pressure-icon">▼</span>
+                </div>
+                <div class="pressure-content">
+                    <p class="pressure-explanation">
+                        Esta frase é uma forma de invalidação emocional. Quando alguém minimiza seus sentimentos dizendo que você é "sensível demais", está negando sua experiência emocional legítima. Todos têm o direito de sentir e expressar suas emoções. Esta tática é frequentemente usada para fazer a pessoa duvidar de suas próprias reações e aceitar comportamentos inadequados.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="pressure-item">
+                <div class="pressure-header">
+                    <span>"Se você me amasse, faria isso por mim."</span>
+                    <span class="pressure-icon">▼</span>
+                </div>
+                <div class="pressure-content">
+                    <p class="pressure-explanation">
+                        Isso é manipulação emocional. Usar o amor como moeda de troca para conseguir o que se quer é uma forma de controle. Em relacionamentos saudáveis, o amor não é condicional nem usado como ferramenta de pressão. Você não precisa provar seu amor fazendo coisas com as quais não se sente confortável.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="pressure-item">
+                <div class="pressure-header">
+                    <span>"Isso nunca aconteceu, você está imaginando coisas."</span>
+                    <span class="pressure-icon">▼</span>
+                </div>
+                <div class="pressure-content">
+                    <p class="pressure-explanation">
+                        Este é um exemplo clássico de gaslighting, uma forma de abuso psicológico onde o manipulador faz a vítima questionar sua própria memória e sanidade. É uma tática perigosa que pode causar sérios danos emocionais e psicológicos. Confie em suas percepções e memórias.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="pressure-item">
+                <div class="pressure-header">
+                    <span>"Você não pode sair com essas roupas."</span>
+                    <span class="pressure-icon">▼</span>
+                </div>
+                <div class="pressure-content">
+                    <p class="pressure-explanation">
+                        Controlar a aparência ou as roupas de alguém é uma forma de dominação e controle. Cada pessoa tem autonomia sobre seu próprio corpo e escolhas. Este tipo de comentário pode ser um sinal de relacionamento abusivo e controlador. Ninguém deve ditar como você se veste.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="pressure-item">
+                <div class="pressure-header">
+                    <span>"Você deveria sorrir mais."</span>
+                    <span class="pressure-icon">▼</span>
+                </div>
+                <div class="pressure-content">
+                    <p class="pressure-explanation">
+                        Esta é uma forma de policiamento de expressões e emoções, frequentemente direcionada às mulheres. Ninguém deve se sentir obrigado a performar felicidade ou simpatia para agradar os outros. Você tem o direito de expressar suas emoções genuínas sem ser pressionado a alterar sua expressão facial ou estado de espírito.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="pressure-item">
+                <div class="pressure-header">
+                    <span>"Foi só uma brincadeira, você não tem senso de humor."</span>
+                    <span class="pressure-icon">▼</span>
+                </div>
+                <div class="pressure-content">
+                    <p class="pressure-explanation">
+                        Usar "humor" como desculpa para comentários ofensivos ou comportamento inadequado é uma forma de minimizar o impacto de palavras ou ações prejudiciais. Se algo te machuca, não é engraçado. Esta é outra forma de invalidação emocional que tenta fazer você sentir culpa por ter se ofendido com algo genuinamente ofensivo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="participe">
+        <h2 class="section-title">Participe</h2>
+        <p class="section-subtitle">Compartilhe sua reflexão ou experiência de forma anônima</p>
+        
+        <form class="participate-form" id="participate-form">
+            <div class="form-group">
+                <label class="form-label" for="name">Nome (opcional)</label>
+                <input type="text" class="form-input" id="name" placeholder="Deixe em branco para enviar anonimamente">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="message">Sua mensagem *</label>
+                <textarea class="form-textarea" id="message" required placeholder="Compartilhe sua reflexão, experiência ou pensamento sobre o Dia Internacional da Mulher..."></textarea>
+            </div>
+            
+            <button type="submit" class="form-submit">Enviar Mensagem</button>
+            <div class="form-success" id="form-success">✓ Mensagem enviada com sucesso! Obrigado por participar.</div>
+        </form>
+    </section>
+
+    <section id="contato">
+        <h2 class="section-title">Contato</h2>
+        <p class="section-subtitle">Dúvidas, sugestões ou mais informações</p>
+        
+        <div style="text-align: center; max-width: 600px; margin: 0 auto; color: var(--text-light); line-height: 1.8;">
+            <p>Este projeto foi desenvolvido para fins educacionais como parte das atividades do Dia Internacional da Mulher.</p>
+            <p style="margin-top: 1.5rem;">Para mais informações sobre direitos das mulheres e apoio em situações de violência:</p>
+            <p style="margin-top: 1rem; font-weight: 600; color: var(--primary);">Ligue 180 - Central de Atendimento à Mulher</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Serviço gratuito e confidencial, disponível 24 horas</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-quote">
+            "O futuro será de quem ousar transformar o presente."
+        </div>
+        <div class="footer-credits">
+            Projeto Educacional - Dia Internacional da Mulher 2024<br>
+            Desenvolvido com propósito de conscientização e educação
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Timeline expand/collapse
+        document.querySelectorAll('.timeline-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const content = title.nextElementSibling;
+                content.classList.toggle('expanded');
+            });
+        });
+
+        // Quiz functionality
+        const quizData = [
+            {
+                question: "A diferença salarial entre homens e mulheres no Brasil é um mito?",
+                options: ["Verdade", "Mito"],
+                correct: 1,
+                explanation: "MITO. Segundo dados do IBGE, mulheres brasileiras ganham em média 20% a menos que homens exercendo as mesmas funções. Esta disparidade existe mesmo quando mulheres têm maior escolaridade."
+            },
+            {
+                question: "Mulheres são naturalmente mais emotivas que homens?",
+                options: ["Verdade", "Mito"],
+                correct: 1,
+                explanation: "MITO. A expressão de emoções é influenciada principalmente por fatores culturais e sociais, não biológicos. Homens e mulheres experimentam a mesma gama de emoções, mas são socializados de formas diferentes sobre como expressá-las."
+            },
+            {
+                question: "A Lei Maria da Penha protege apenas mulheres?",
+                options: ["Verdade", "Mito"],
+                correct: 0,
+                explanation: "VERDADE. A Lei Maria da Penha (Lei 11.340/2006) foi criada especificamente para coibir a violência doméstica e familiar contra a mulher, reconhecendo a vulnerabilidade histórica e estrutural das mulheres neste contexto."
+            },
+            {
+                question: "Tarefas domésticas devem ser responsabilidade exclusiva das mulheres?",
+                options: ["Verdade", "Mito"],
+                correct: 1,
+                explanation: "MITO. Tarefas domésticas são responsabilidade de todos os moradores da casa, independentemente do gênero. A divisão igualitária do trabalho doméstico é fundamental para relações justas e equilibradas."
+            },
+            {
+                question: "O consentimento pode ser retirado a qualquer momento?",
+                options: ["Verdade", "Mito"],
+                correct: 0,
+                explanation: "VERDADE. O consentimento deve ser contínuo, entusiástico e pode ser revogado a qualquer momento. Dizer 'não' ou mudar de ideia é sempre válido, em qualquer situação e a qualquer momento."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const question = quizData[currentQuestion];
+            document.getElementById('question').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'quiz-option';
+                optionDiv.textContent = option;
+                optionDiv.addEventListener('click', () => checkAnswer(index));
+                optionsContainer.appendChild(optionDiv);
+            });
+            
+            document.getElementById('feedback').classList.remove('show');
+            document.getElementById('next-btn').style.display = 'none';
+        }
+
+        function checkAnswer(selected) {
+            const question = quizData[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+            const feedback = document.getElementById('feedback');
+            
+            options.forEach((option, index) => {
+                option.style.pointerEvents = 'none';
+                if (index === question.correct) {
+                    option.classList.add('correct');
+                } else if (index === selected) {
+                    option.classList.add('incorrect');
+                }
+            });
+            
+            if (selected === question.correct) {
+                score++;
+                feedback.style.background = '#D1FAE5';
+                feedback.style.color = '#065F46';
+            } else {
+                feedback.style.background = '#FEE2E2';
+                feedback.style.color = '#991B1B';
+            }
+            
+            feedback.textContent = question.explanation;
+            feedback.classList.add('show');
+            document.getElementById('next-btn').style.display = 'block';
+        }
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            document.getElementById('quiz-content').style.display = 'none';
+            document.getElementById('quiz-result').style.display = 'block';
+            
+            const percentage = (score / quizData.length) * 100;
+            let message = '';
+            
+            if (percentage >= 80) {
+                message = '🌟 Excelente! Você está muito bem informado!';
+            } else if (percentage >= 60) {
+                message = '👍 Muito bem! Continue aprendendo!';
+            } else {
+                message = '📚 Continue estudando sobre o tema!';
+            }
+            
+            document.getElementById('score').innerHTML = `
+                Você acertou ${score} de ${quizData.length} perguntas<br>
+                <span style="font-size: 1.2rem; margin-top: 1rem; display: block;">${message}</span>
+            `;
+        }
+
+        document.getElementById('restart-btn').addEventListener('click', () => {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-content').style.display = 'block';
+            document.getElementById('quiz-result').style.display = 'none';
+            loadQuestion();
+        });
+
+        loadQuestion();
+
+        // Pressures expand/collapse
+        document.querySelectorAll('.pressure-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('participate-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value || 'Anônimo';
+            const message = document.getElementById('message').value;
+            
+            console.log('Mensagem enviada:', { name, message });
+            
+            document.getElementById('form-success').style.display = 'block';
+            document.getElementById('participate-form').reset();
+            
+            setTimeout(() => {
+                document.getElementById('form-success').style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
